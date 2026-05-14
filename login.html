@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kajiunduthi School ERP Login</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(-45deg,#ff9a9e,#6a11cb,#2575fc,#000428);
+  background-size:400% 400%;
+  animation:bg 18s ease infinite;
+}
+
+@keyframes bg{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+
+.container{
+  width:900px;
+  max-width:95%;
+  height:520px;
+  display:flex;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  z-index:2;
+  box-shadow:0 25px 80px rgba(0,0,0,0.5);
+}
+
+.left{
+  flex:1;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+}
+
+.logo{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  background:white;
+  color:#6a11cb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:26px;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.left h1{
+  font-size:28px;
+}
+
+.left p{
+  opacity:0.8;
+  font-size:14px;
+  margin-top:5px;
+}
+
+.right{
+  flex:1;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(20px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+.login-box{
+  width:100%;
+  max-width:320px;
+  color:white;
+}
+
+.login-box h2{
+  text-align:center;
+  margin-bottom:20px;
+  font-size:22px;
+}
+
+.input-group{
+  margin-bottom:12px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  background:rgba(255,255,255,0.2);
+  color:white;
+  transition:0.3s;
+}
+
+input::placeholder{
+  color:rgba(255,255,255,0.8);
+}
+
+input:focus{
+  background:rgba(0,198,255,0.25);
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  margin-top:10px;
+  background:linear-gradient(90deg,#00c6ff,#0072ff);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 20px rgba(0,198,255,0.5);
+}
+
+small{
+  display:block;
+  margin-top:15px;
+  text-align:center;
+  opacity:0.7;
+}
+
+.error{
+  color:#ffb3b3;
+  font-size:13px;
+  text-align:center;
+  margin-top:8px;
+  min-height:18px;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+  .container{
+    flex-direction:column;
+    height:auto;
+  }
+  .left,.right{
+    padding:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+  <div class="left">
+    <div class="logo-container">
+  <div class="logo-container">
+  <div class="logo">
+  <img src="logo.png" alt="School Logo" style="width:70px;height:70px;border-radius:18px;object-fit:cover;">
+</div>
+  
+</div>
+ 
+</div>
+    <h1>Kajiunduthi School</h1>
+    <p>Teacher & Student ERP System</p>
+    <p>Smart • Modern • Digital Learning</p>
+  </div>
+
+  <div class="right">
+    <div class="login-box">
+      <h2>Admin Login</h2>
+
+      <form onsubmit="return login()">
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit">Login</button>
+        <div class="error" id="error"></div>
+      </form>
+
+      <small>Secure School Management System</small>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function login(){
+  let e=document.getElementById("email").value.trim();
+  let p=document.getElementById("password").value.trim();
+  let error=document.getElementById("error");
+
+  if(e==="admin@school.com" && p==="1234"){
+    window.location.href="dashboard.html";
+  }else{
+    error.textContent="Invalid email or password";
+  }
+  return false;
+}
+
+
+function loadLogo(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    const img = document.getElementById('logoPreview');
+    const text = document.getElementById('logoText');
+    img.src = e.target.result;
+    img.style.display='block';
+    text.style.display='none';
+  }
+  reader.readAsDataURL(file);
+}
+function loadLogo(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    const img = document.getElementById('logoPreview');
+    const text = document.getElementById('logoText');
+    img.src = e.target.result;
+    img.style.display='block';
+    text.style.display='none';
+  }
+  reader.readAsDataURL(file);
+}
+</script>
+
+</body>
+</html>

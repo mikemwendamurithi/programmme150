@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Timetable Dashboard</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      display:flex;
+      background:#f4f7fc;
+      min-height:100vh;
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      width:250px;
+      background:#1e3c72;
+      color:white;
+      padding:20px;
+      position:fixed;
+      height:100%;
+    }
+
+    .sidebar .logo{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .sidebar .logo img{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      border:3px solid white;
+      object-fit:cover;
+      margin-bottom:10px;
+    }
+
+    .sidebar h2{
+      font-size:20px;
+    }
+
+    .menu{
+      margin-top:20px;
+    }
+
+    .menu a{
+      display:block;
+      color:#f3eeee;
+      text-decoration:none;
+      padding:15px;
+      border-radius:10px;
+      margin-bottom:10px;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      background:rgba(255,255,255,0.2);
+    }
+
+    /* MAIN CONTENT */
+    .main-content{
+      margin-left:250px;
+      width:100%;
+      padding:20px;
+    }
+
+    /* TOP BAR */
+    .topbar{
+      background:white;
+      padding:15px 20px;
+      border-radius:12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom:25px;
+    }
+
+    .topbar h1{
+      color:#1e3c72;
+      font-size:24px;
+    }
+
+    .admin{
+      font-weight:bold;
+      color:#555;
+    }
+
+    /* CARDS */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-bottom:30px;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h2{
+      color:#1e3c72;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      font-size:28px;
+      font-weight:bold;
+      color:#333;
+    }
+
+    /* TIMETABLE */
+    .table-container{
+      background:white;
+      padding:20px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      overflow-x:auto;
+    }
+
+    .table-container h2{
+      margin-bottom:20px;
+      color:#1e3c72;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:900px;
+    }
+
+    table th{
+      background:#1e3c72;
+      color:white;
+      padding:15px;
+    }
+
+    table td{
+      padding:15px;
+      border-bottom:1px solid #ddd;
+      text-align:center;
+    }
+
+    table tr:hover{
+      background:#f1f5ff;
+    }
+
+    /* BUTTONS */
+    .btn{
+      padding:8px 14px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+     
+      font-weight:bold;
+    }
+
+    .edit{
+      background:#28a745;
+    }
+
+    .delete{
+      background:#dc3545;
+    }
+
+    /* MOBILE */
+    @media(max-width:768px){
+
+      .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+      }
+
+      .main-content{
+        margin-left:0;
+      }
+
+      body{
+        flex-direction:column;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="logo">
+      <img src="logo.png" alt="School Logo">
+      <h2>KAJIUNDUTHI SCHOOL</h2>
+    </div>
+
+    <div class="menu">
+      <a href="#">🏠 Dashboard</a>
+      <a href="#">👨‍🏫 Teachers</a>
+      <a href="#">📅 Timetable</a>
+      <a href="#">🏫 Classes</a>
+      <a href="#">📚 Subjects</a>
+      <a href="#">⚙ Settings</a>
+      <a href="#">🚪 Logout</a>
+    </div>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <h1>Teacher Timetable Dashboard</h1>
+      <div class="admin">
+        Welcome, Admin
+      </div>
+    </div>
+
+    <!-- DASHBOARD CARDS -->
+    <div class="cards">
+
+      <div class="card">
+        <h2>Total Teachers</h2>
+        <p>25</p>
+      </div>
+
+      <div class="card">
+        <h2>Total Classes</h2>
+        <p>12</p>
+      </div>
+
+      <div class="card">
+        <h2>Total Subjects</h2>
+        <p>18</p>
+      </div>
+
+      <div class="card">
+        <h2>Lessons Today</h2>
+        <p>42</p>
+      </div>
+
+    </div>
+
+    <!-- TIMETABLE TABLE -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMT Vertical Schedule</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364);
+  background-size:400% 400%;
+  animation:bg 12s ease infinite;
+  color:rgb(19, 228, 4);
+}
+
+@keyframes bg{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+header{
+  text-align:center;
+  padding:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+}
+
+.container{
+  max-width:1000px;
+  margin:25px auto;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+/* CARD */
+.grade-box{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border-radius:16px;
+  padding:15px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.grade-title{
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  color:#00c6ff;
+  margin-bottom:12px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+th,td{
+  padding:12px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.1);
+  font-size:13px;
+}
+
+/* ❌ REMOVE HOVER WHITE EFFECT */
+td:hover{
+  background:transparent;
+  transform:none;
+}
+
+/* HEADER STYLE */
+th{
+  background:rgba(0,198,255,0.3);
+}
+
+/* SESSION COLORS */
+.morning{
+  background:rgba(144,238,144,0.12);
+}
+
+.evening{
+  background:rgba(255,165,0,0.12);
+}
+
+.session{
+  font-weight:bold;
+}
+
+.time{
+  color:#ffd166;
+  font-weight:bold;
+}
+
+/* TEACHER STYLE */
+.teacher{
+  font-weight:bold;
+  color:#171010;
+}
+
+.phone{
+  font-size:12px;
+  color:#051012;
+  display:block;
+  margin-top:3px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🚑 EMT Vertical Schedule Dashboard</h1>
+<p>Grade 10 - Grade 12 (Morning & Evening Lessons)</p>
+</header>
+
+<div class="container">
+
+<!-- GRADE 10 -->
+<div class="grade-box">
+  <div class="grade-title">📘 Grade 10 EMT</div>
+
+  <table>
+    <tr>
+      <th>Session</th>
+      <th>Time</th>
+      <th>Subject</th>
+      <th>Teacher</th>
+    </tr>
+
+    <tr class="morning">
+      <td class="session">🌅 Morning</td>
+      <td class="time">6:50 - 7:40</td>
+      <td>Mathematics</td>
+      <td>
+        <div class="teacher">Mr. John Kamau</div>
+        <span class="phone">📞 0712 345 678</span>
+      </td>
+    </tr>
+
+    <tr class="evening">
+      <td class="session">🌙 Evening</td>
+      <td class="time">6:30 - 7:30</td>
+      <td>English</td>
+      <td>
+        <div class="teacher">Ms. Grace Wanjiku</div>
+        <span class="phone">📞 0722 456 789</span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- GRADE 11 -->
+<div class="grade-box">
+  <div class="grade-title">📗 Grade 11 EMT</div>
+
+  <table>
+    <tr>
+      <th>Session</th>
+      <th>Time</th>
+      <th>Subject</th>
+      <th>Teacher</th>
+    </tr>
+
+    <tr class="morning">
+      <td class="session">🌅 Morning</td>
+      <td class="time">6:50 - 7:40</td>
+      <td>Physics</td>
+      <td>
+        <div class="teacher">Mr. Kelvin Otieno</div>
+        <span class="phone">📞 0733 567 890</span>
+      </td>
+    </tr>
+
+    <tr class="evening">
+      <td class="session">🌙 Evening</td>
+      <td class="time">6:30 - 7:30</td>
+      <td>Chemistry</td>
+      <td>
+        <div class="teacher">Ms. Faith Njeri</div>
+        <span class="phone">📞 0701 234 567</span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- GRADE 12 -->
+<div class="grade-box">
+  <div class="grade-title">📙 Grade 12 EMT</div>
+
+  <table>
+    <tr>
+      <th>Session</th>
+      <th>Time</th>
+      <th>Subject</th>
+      <th>Teacher</th>
+    </tr>
+
+    <tr class="morning">
+      <td class="session">🌅 Morning</td>
+      <td class="time">6:50 - 7:40</td>
+      <td>Mathematics</td>
+      <td>
+        <div class="teacher">Mr. James Mwangi</div>
+        <span class="phone">📞 0755 678 901</span>
+      </td>
+    </tr>
+
+    <tr class="evening">
+      <td class="session">🌙 Evening</td>
+      <td class="time">6:30 - 7:30</td>
+      <td>English</td>
+      <td>
+        <div class="teacher">Ms. Lydia Chebet</div>
+        <span class="phone">📞 0711 890 123</span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+</div>
+
+</body>
+</html>

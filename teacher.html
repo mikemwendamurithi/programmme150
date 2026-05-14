@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachers Homepage</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f7fc;
+    }
+
+    /* HEADER */
+    .header{
+      background:#1e3c72;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    .header h1{
+      font-size:28px;
+    }
+
+    /* GRID */
+    .container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:20px;
+      padding:30px;
+    }
+
+    /* CARD */
+    .card{
+      background:white;
+      border-radius:15px;
+      padding:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+      text-align:center;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .avatar{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      background:#1e3c72;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:28px;
+      font-weight:bold;
+      margin:0 auto 10px;
+    }
+
+    .name{
+      font-size:18px;
+      font-weight:bold;
+      color:#1e3c72;
+      margin-bottom:10px;
+    }
+
+    .info{
+      text-align:left;
+      font-size:14px;
+      color:#555;
+    }
+
+    .info p{
+      margin:6px 0;
+      background:#f4f7fc;
+      padding:6px;
+      border-radius:6px;
+    }
+
+    .btn{
+      margin-top:10px;
+      padding:8px;
+      width:100%;
+      border:none;
+      background:#1e3c72;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      background:#16325c;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>Teacher Management System - Homepage</h1>
+  </div>
+
+  <div class="container">
+
+    <!-- 1 -->
+    <div class="card">
+      <div class="avatar">JM</div>
+      <div class="name">John Mwangi</div>
+      <div class="info">
+        <p>Address: Nairobi</p>
+        <p>Phone: 0712 345 678</p>
+        <p>Subject: Mathematics</p>
+      </div>
+      
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+      <div class="avatar">SM</div>
+      <div class="name">Sarah Muthoni</div>
+      <div class="info">
+        <p>Address: Kiambu</p>
+        <p>Phone: 0722 111 222</p>
+        <p>Subject: English</p>
+      </div>
+      
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+      <div class="avatar">DK</div>
+      <div class="name">David Kimani</div>
+      <div class="info">
+        <p>Address: Nakuru</p>
+        <p>Phone: 0733 444 555</p>
+        <p>Subject: Science</p>
+      </div>
+      
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <div class="avatar">EW</div>
+      <div class="name">Esther Wanjiku</div>
+      <div class="info">
+        <p>Address: Eldoret</p>
+        <p>Phone: 0700 123 456</p>
+        <p>Subject: History</p>
+      </div>
+      
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <div class="avatar">PM</div>
+      <div class="name">Peter Mwangi</div>
+      <div class="info">
+        <p>Address: Mombasa</p>
+        <p>Phone: 0711 222 333</p>
+        <p>Subject: Geography</p>
+      </div>
+      
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+      <div class="avatar">AK</div>
+      <div class="name">Alice Kerubo</div>
+      <div class="info">
+        <p>Address: Kisii</p>
+        <p>Phone: 0720 999 888</p>
+        <p>Subject: Biology</p>
+      </div>
+     
+    </div>
+
+    <!-- 7 -->
+    <div class="card">
+      <div class="avatar">CM</div>
+      <div class="name">Charles Maina</div>
+      <div class="info">
+        <p>Address: Meru</p>
+        <p>Phone: 0730 777 111</p>
+        <p>Subject: Physics</p>
+      </div>
+      
+    </div>
+
+    <!-- 8 -->
+    <div class="card">
+      <div class="avatar">L</div>
+      <div class="name">Lucy Wambui</div>
+      <div class="info">
+        <p>Address: Thika</p>
+        <p>Phone: 0715 666 444</p>
+        <p>Subject: Kiswahili</p>
+      </div>
+    
+    </div>
+
+    <!-- 9 -->
+    <div class="card">
+      <div class="avatar">JN</div>
+      <div class="name">James Njoroge</div>
+      <div class="info">
+        <p>Address: Machakos</p>
+        <p>Phone: 0709 555 333</p>
+        <p>Subject: Computer Studies</p>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="card">
+      <div class="avatar">FW</div>
+      <div class="name">Faith Wanjala</div>
+      <div class="info">
+        <p>Address: Bungoma</p>
+        <p>Phone: 0728 101 202</p>
+        <p>Subject: CRE</p>
+      </div>
+     
+    </div>
+
+
+</body>
+</html>

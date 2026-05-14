@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBE Senior School Streams</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364);
+  background-size:400% 400%;
+  animation:bg 12s ease infinite;
+  color:white;
+}
+
+@keyframes bg{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+header{
+  text-align:center;
+  padding:25px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+}
+
+.container{
+  max-width:1100px;
+  margin:40px auto;
+  padding:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 60px rgba(0,198,255,0.25);
+}
+
+/* HEADER */
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.grade-title{
+  font-size:18px;
+  font-weight:bold;
+  color:#00c6ff;
+}
+
+.tag{
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:6px;
+  background:linear-gradient(90deg,#ffb703,#ff7b00);
+  color:black;
+}
+
+/* STREAM */
+.streams{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* STREAM BOX */
+.stream{
+  padding:10px 12px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.06);
+  border-left:4px solid #00c6ff;
+  transition:0.3s;
+}
+
+.stream:hover{
+  background:rgba(0,198,255,0.15);
+  transform:translateX(5px);
+}
+
+/* CLASS TEACHER */
+.teacher{
+  font-size:12px;
+  font-weight:bold;
+  color:#ffdd57;
+  margin-bottom:4px;
+}
+
+/* STREAM NAME */
+.stream-name{
+  font-size:14px;
+  font-weight:600;
+}
+
+.stream-desc{
+  font-size:12px;
+  opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏫 CBE Senior School Streams</h1>
+<p>Class Teachers Assigned per Stream</p>
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<!-- GRADE 10 -->
+<div class="card">
+<div class="card-header">
+  <div class="grade-title">Grade 10</div>
+  <div class="tag">Foundation</div>
+</div>
+
+<div class="streams">
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. John Kamau</div>
+    <div class="stream-name">10A - Science</div>
+    <div class="stream-desc">Physics • Chemistry • Biology</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👩‍🏫 Ms. Grace Wanjiku</div>
+    <div class="stream-name">10B - Arts</div>
+    <div class="stream-desc">History • CRE • Languages</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. David Ouma</div>
+    <div class="stream-name">10C - Business</div>
+    <div class="stream-desc">Accounting • Economics</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👩‍🏫 Ms. Amina Hassan</div>
+    <div class="stream-name">10D - ICT</div>
+    <div class="stream-desc">Programming • Computer Studies</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. Peter Mwangi</div>
+    <div class="stream-name">10E - Technical</div>
+    <div class="stream-desc">Engineering • Design</div>
+  </div>
+
+</div>
+</div>
+
+<!-- GRADE 11 -->
+<div class="card">
+<div class="card-header">
+  <div class="grade-title">Grade 11</div>
+  <div class="tag">Specialization</div>
+</div>
+
+<div class="streams">
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. Kelvin Otieno</div>
+    <div class="stream-name">11A - Pure Science</div>
+    <div class="stream-desc">Advanced Physics & Chemistry</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👩‍🏫 Ms. Faith Njeri</div>
+    <div class="stream-name">11B - Applied Science</div>
+    <div class="stream-desc">Biology & Environmental Science</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. Samuel Kiptoo</div>
+    <div class="stream-name">11C - Humanities</div>
+    <div class="stream-desc">History • Geography • CRE</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👩‍🏫 Ms. Sharon Atieno</div>
+    <div class="stream-name">11D - Business</div>
+    <div class="stream-desc">Finance • Commerce</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. Brian Kiplagat</div>
+    <div class="stream-name">11E - ICT</div>
+    <div class="stream-desc">Software Development</div>
+  </div>
+
+</div>
+</div>
+
+<!-- GRADE 12 -->
+<div class="card">
+<div class="card-header">
+  <div class="grade-title">Grade 12</div>
+  <div class="tag">Exams</div>
+</div>
+
+<div class="streams">
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. James Mwangi</div>
+    <div class="stream-name">12A - Science Track</div>
+    <div class="stream-desc">KCSE Science Core</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👩‍🏫 Ms. Lydia Chebet</div>
+    <div class="stream-name">12B - Engineering</div>
+    <div class="stream-desc">Applied Technology</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. Isaac Mworia</div>
+    <div class="stream-name">12C - Arts</div>
+    <div class="stream-desc">Languages & Humanities</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👩‍🏫 Ms. Mary Wanjiku</div>
+    <div class="stream-name">12D - Business</div>
+    <div class="stream-desc">Accounting • Economics</div>
+  </div>
+
+  <div class="stream">
+    <div class="teacher">👨‍🏫 Mr. Daniel Mutua</div>
+    <div class="stream-name">12E - ICT</div>
+    <div class="stream-desc">Digital Systems & Programming</div>
+  </div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

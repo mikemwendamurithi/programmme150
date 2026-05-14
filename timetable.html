@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBE ERP Timetable</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364);
+  background-size:400% 400%;
+  animation:bg 12s ease infinite;
+  color:white;
+}
+
+@keyframes bg{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+header{
+  text-align:center;
+  padding:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+}
+
+.container{
+  max-width:900px;
+  margin:30px auto;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+
+.section{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border-radius:15px;
+  padding:15px;
+}
+
+.title{
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  color:#00c6ff;
+  margin-bottom:10px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  font-size:13px;
+}
+
+.break{
+  text-align:center;
+  padding:12px;
+  margin:10px 0;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:10px;
+  font-weight:bold;
+  color:#ffd166;
+}
+
+/* SUBJECTS */
+.math{color:#ffdd57;font-weight:bold;}
+.eng{color:#00c6ff;font-weight:bold;}
+.sci{color:#90ee90;font-weight:bold;}
+.ict{color:#ff9a9e;font-weight:bold;}
+.cre{color:#c77dff;font-weight:bold;}
+.bus{color:#ffd6a5;font-weight:bold;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏫 CBE ERP Timetable System</h1>
+<p>45-Min Lessons • Tea Break • Lunch + Extra Afternoon Lessons</p>
+</header>
+
+<div class="container">
+
+<!-- GRADE 10 -->
+<div class="section">
+<div class="title">📘 Grade 10</div>
+
+<div class="row"><span>8:00 - 8:45</span><span class="math">Mathematics</span></div>
+<div class="row"><span>8:45 - 9:30</span><span class="eng">English</span></div>
+
+<div class="break">☕ SHORT BREAK (9:30 - 9:40)</div>
+
+<div class="row"><span>9:40 - 10:25</span><span class="sci">Science</span></div>
+<div class="row"><span>10:25 - 11:10</span><span class="ict">ICT</span></div>
+
+<div class="break">🍵 TEA BREAK (11:10 - 11:40)</div>
+
+<div class="row"><span>11:40 - 12:25</span><span class="cre">CRE</span></div>
+<div class="row"><span>12:25 - 1:10</span><span class="math">Mathematics</span></div>
+
+<div class="break">🍽 LUNCH BREAK (1:10 - 1:50)</div>
+
+<div class="row"><span>1:50 - 2:35</span><span class="eng">English</span></div>
+<div class="row"><span>2:35 - 3:20</span><span class="sci">Science</span></div>
+</div>
+
+<!-- GRADE 11 -->
+<div class="section">
+<div class="title">📗 Grade 11</div>
+
+<div class="row"><span>8:00 - 8:45</span><span class="sci">Physics</span></div>
+<div class="row"><span>8:45 - 9:30</span><span class="math">Mathematics</span></div>
+
+<div class="break">☕ SHORT BREAK (9:30 - 9:40)</div>
+
+<div class="row"><span>9:40 - 10:25</span><span class="sci">Chemistry</span></div>
+<div class="row"><span>10:25 - 11:10</span><span class="ict">ICT</span></div>
+
+<div class="break">🍵 TEA BREAK (11:10 - 11:40)</div>
+
+<div class="row"><span>11:40 - 12:25</span><span class="eng">English</span></div>
+<div class="row"><span>12:25 - 1:10</span><span class="cre">CRE</span></div>
+
+<div class="break">🍽 LUNCH BREAK (1:10 - 1:50)</div>
+
+<div class="row"><span>1:50 - 2:35</span><span class="bus">Business</span></div>
+<div class="row"><span>2:35 - 3:20</span><span class="math">Mathematics</span></div>
+</div>
+
+<!-- GRADE 12 -->
+<div class="section">
+<div class="title">📙 Grade 12</div>
+
+<div class="row"><span>8:00 - 8:45</span><span class="sci">KCSE Science</span></div>
+<div class="row"><span>8:45 - 9:30</span><span class="math">Mathematics</span></div>
+
+<div class="break">☕ SHORT BREAK (9:30 - 9:40)</div>
+
+<div class="row"><span>9:40 - 10:25</span><span class="eng">English</span></div>
+<div class="row"><span>10:25 - 11:10</span><span class="ict">ICT</span></div>
+
+<div class="break">🍵 TEA BREAK (11:10 - 11:40)</div>
+
+<div class="row"><span>11:40 - 12:25</span><span class="bus">Business</span></div>
+<div class="row"><span>12:25 - 1:10</span><span class="cre">CRE</span></div>
+
+<div class="break">🍽 LUNCH BREAK (1:10 - 1:50)</div>
+
+<div class="row"><span>1:50 - 2:35</span><span class="math">Mathematics</span></div>
+<div class="row"><span>2:35 - 3:20</span><span class="eng">English</span></div>
+</div>
+
+</div>
+
+</body>
+</html>
